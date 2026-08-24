@@ -42,7 +42,7 @@ export function Hero() {
     <section ref={root} className="bg-white pt-28">
       <div className="site-grid grid gap-10 pb-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:pb-16">
         <h1 className="hero-title display overflow-hidden">{hero.headline}</h1>
-        <p className="hero-copy max-w-md text-[1.15rem] leading-relaxed text-black/80 lg:justify-self-end">
+        <p className="hero-copy max-w-md text-[1.15rem] leading-relaxed text-black/80 lg:justify-self-end" data-sa="lines">
           {hero.body}
         </p>
       </div>

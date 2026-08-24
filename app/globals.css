@@ -35,6 +35,11 @@
 html {
   background: var(--black);
   scroll-behavior: auto;
+  scrollbar-color: #ffec88 #1a1a1a;
+}
+
+.split-line {
+  overflow: hidden;
 }
 
 body {
@@ -151,7 +156,6 @@ a {
 }
 
 .nav-pill {
-  display: flex;
   align-items: center;
   background: #000;
   color: var(--white);

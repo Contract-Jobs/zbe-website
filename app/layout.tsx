@@ -3,6 +3,7 @@ import { Instrument_Sans } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Loader } from "@/components/Loader";
+import { MotionInit } from "@/components/MotionInit";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { company } from "@/lib/content";
 import "./globals.css";
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className="min-h-full bg-white font-sans text-black">
         <Loader />
         <SmoothScroll />
+        <MotionInit />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

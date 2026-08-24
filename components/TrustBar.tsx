@@ -19,7 +19,7 @@ export function TrustBar() {
   return (
     <section className="border-y border-black/10 bg-white">
       <div className="site-grid flex items-stretch">
-        <p className="hidden max-w-[13rem] shrink-0 items-center border-r border-black/10 py-5 pr-8 text-sm font-medium leading-snug lg:flex">
+        <p className="hidden max-w-[13rem] shrink-0 items-center border-r border-black/10 py-5 pr-8 text-sm font-medium leading-snug lg:flex" data-sa="block">
           {trust.label}
         </p>
         <div className="overflow-hidden py-2">

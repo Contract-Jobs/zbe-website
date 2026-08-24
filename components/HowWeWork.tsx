@@ -9,11 +9,11 @@ export function HowWeWork() {
       <div className="site-grid grid border-x border-black/10 lg:grid-cols-[1fr_1.15fr]">
         <div className="flex flex-col justify-between border-b border-black/10 px-0 py-14 lg:border-b-0 lg:border-r lg:pr-12">
           <div>
-            <p className="kicker flex items-center gap-2">
+            <p className="kicker flex items-center gap-2" data-sa="block">
               <span className="inline-block h-2 w-2 rounded-full bg-black" />
               {howWeWork.label}
             </p>
-            <p className="mt-8 max-w-md text-[1.35rem] leading-snug tracking-tight">
+            <p className="mt-8 max-w-md text-[1.35rem] leading-snug tracking-tight" data-sa="lines">
               {howWeWork.body}
             </p>
           </div>
@@ -27,7 +27,7 @@ export function HowWeWork() {
         </div>
       </div>
 
-      <div className="site-grid grid gap-px bg-black/10 py-px lg:grid-cols-3">
+      <div className="site-grid grid gap-px bg-black/10 py-px lg:grid-cols-3" data-sa="children">
         {howWeWork.steps.map((step) => (
           <article key={step.title} className="bg-white p-8 lg:min-h-[220px]">
             <div className="mb-10 flex justify-end text-black/70">

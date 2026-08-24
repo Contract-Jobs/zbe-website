@@ -30,6 +30,24 @@ export function HeroIllustration() {
         { opacity: 0.15 },
         { opacity: 0.7, duration: 1.6, yoyo: true, repeat: -1, ease: "sine.inOut" }
       );
+
+      const traces = root.current?.querySelectorAll<SVGGeometryElement>(".rail");
+      traces?.forEach((path) => {
+        try {
+          const length = path.getTotalLength();
+          gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
+        } catch {
+          /* not a geometry node */
+        }
+      });
+      if (traces?.length) {
+        gsap.to(traces, {
+          strokeDashoffset: 0,
+          duration: 1.8,
+          stagger: 0.05,
+          ease: "power2.out",
+        });
+      }
     },
     { scope: root }
   );
@@ -52,11 +70,11 @@ export function HeroIllustration() {
       </g>
 
       <g fill="none" stroke="#fefbf6" strokeWidth="1.4">
-        <rect x="90" y="168" width="800" height="54" rx="2" />
+        <rect className="rail" x="90" y="168" width="800" height="54" rx="2" />
         <rect x="90" y="168" width="800" height="10" fill="#2b2a2a" stroke="none" />
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
           <g key={i} className="sw" style={{ transformOrigin: `${130 + i * 68}px 210px` }}>
-            <rect x={112 + i * 68} y="182" width="36" height="86" rx="2" />
+            <rect className="rail" x={112 + i * 68} y="182" width="36" height="86" rx="2" />
             <rect x={118 + i * 68} y="190" width="24" height="38" fill="#ffec88" stroke="none" />
             <line x1={130 + i * 68} y1="268" x2={130 + i * 68} y2="318" />
           </g>

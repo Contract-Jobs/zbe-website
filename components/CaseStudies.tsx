@@ -14,14 +14,16 @@ export function CaseStudies() {
   return (
     <section className="bg-white pb-24 pt-20">
       <div className="site-grid">
-        <p className="kicker flex items-center gap-2">
+        <p className="kicker flex items-center gap-2" data-sa="block">
           <span className="inline-block h-2 w-2 rounded-full bg-black" />
           {caseStudies.label}
         </p>
-        <h2 className="display-md mt-8 max-w-3xl">{caseStudies.headline}</h2>
+        <h2 className="display-md mt-8 max-w-3xl" data-sa="lines">
+          {caseStudies.headline}
+        </h2>
 
         <div className="mt-14 grid gap-8 border-t border-black/15 pt-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="relative aspect-square overflow-hidden bg-ink">
+          <div data-clippath-cover className="relative aspect-square overflow-hidden bg-ink">
             <div className="tech-grid absolute inset-0 opacity-70" />
             <Image
               src={item.image}

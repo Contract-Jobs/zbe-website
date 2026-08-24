@@ -10,10 +10,10 @@ export function Header() {
   const pathname = usePathname();
   const lightLogo = pathname === "/about";
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setCollapsed(window.scrollY > 100);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -22,6 +22,8 @@ export function Header() {
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  const showLinks = !collapsed;
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
@@ -35,27 +37,25 @@ export function Header() {
         </Link>
 
         <div className="pointer-events-auto flex items-center gap-1.5">
-          <nav
-            className="nav-pill hidden lg:flex"
-            aria-label="Primary"
-            style={{
-              boxShadow: scrolled ? "0 8px 24px rgba(0,0,0,0.18)" : undefined,
-            }}
-          >
-            {nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                data-active={pathname === item.href}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          {showLinks ? (
+            <nav className="nav-pill hidden items-center lg:flex" aria-label="Primary">
+              {nav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  data-active={pathname === item.href}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          ) : null}
 
           <button
             type="button"
-            className="flex h-[3.15rem] w-[3.15rem] items-center justify-center rounded-[0.35rem] bg-black text-white lg:hidden"
+            className={`flex h-[3.15rem] w-[3.15rem] items-center justify-center rounded-[0.35rem] bg-black text-white ${
+              showLinks ? "lg:hidden" : ""
+            }`}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
@@ -71,7 +71,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="pointer-events-auto mx-3 rounded-md bg-black px-6 py-8 text-white lg:hidden">
+        <div className="pointer-events-auto mx-3 rounded-md bg-black px-6 py-8 text-white">
           <nav className="flex flex-col gap-5 text-2xl font-medium tracking-tight">
             {nav.map((item) => (
               <Link key={item.href} href={item.href}>
