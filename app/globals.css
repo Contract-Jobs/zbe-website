@@ -2,20 +2,20 @@
 @import "lenis/dist/lenis.css";
 
 /* Brand tokens. Theme branches: theme/<accent>-<surface>
- * Swap only these values to try a new palette.
+ * This branch: copper-stone — warm stone surfaces, copper accent (not Podium yellow).
  */
 :root {
-  --white: #fefbf6;
-  --paper: #fffce0;
-  --yellow: #ffec88;
-  --black: #1a1a1a;
-  --ink: #252324;
-  --raised: #2b2a2a;
-  --grey-750: #413e40;
-  --grey-700: #535353;
-  --grey-550: #7a7772;
-  --grey-350: #cecbbf;
-  --grey-150: #ede8e4;
+  --white: #f4efe8;
+  --paper: #eadcc8;
+  --yellow: #e08a3c;
+  --black: #1c1410;
+  --ink: #2c221c;
+  --raised: #322820;
+  --grey-750: #4d4038;
+  --grey-700: #6a5a50;
+  --grey-550: #8c7b6e;
+  --grey-350: #d2c4b6;
+  --grey-150: #ebe3d9;
   --line: color-mix(in hsl, var(--ink) 18%, transparent);
   --line-strong: color-mix(in hsl, var(--ink) 55%, transparent);
   --line-light: color-mix(in hsl, var(--white) 18%, transparent);
