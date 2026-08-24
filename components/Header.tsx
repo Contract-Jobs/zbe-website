@@ -8,7 +8,6 @@ import { ArrowIcon, CloseIcon, MenuIcon, Wordmark } from "./Icons";
 
 export function Header() {
   const pathname = usePathname();
-  const lightLogo = pathname === "/about";
   const [open, setOpen] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
 
@@ -30,10 +29,10 @@ export function Header() {
       <div className="site-grid flex items-center justify-between py-4">
         <Link
           href="/"
-          className="pointer-events-auto relative z-10"
+          className="pointer-events-auto relative z-10 flex h-[3.15rem] items-center rounded-[0.45rem] bg-black px-3.5"
           aria-label={`${company.legalName} home`}
         >
-          <Wordmark light={lightLogo} />
+          <Wordmark light />
         </Link>
 
         <div className="pointer-events-auto flex items-center gap-1.5">
