@@ -86,8 +86,8 @@ export function FAQ() {
 function PanelMini() {
   return (
     <svg viewBox="0 0 200 250" className="h-full w-full" aria-hidden>
-      <rect width="200" height="250" fill="#fffce0" />
-      <g fill="none" stroke="#252324" strokeWidth="1.2">
+      <rect width="200" height="250" fill="var(--paper)" />
+      <g fill="none" stroke="var(--ink)" strokeWidth="1.2">
         <rect x="40" y="50" width="40" height="70" />
         <rect x="92" y="78" width="70" height="22" />
         <path d="M60 120v40M60 160h70M130 100v60" />

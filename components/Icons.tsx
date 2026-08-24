@@ -27,7 +27,7 @@ export function Wordmark({ light = false }: { light?: boolean }) {
     <span
       className="block font-medium leading-none"
       style={{
-        color: light ? "#fefbf6" : "#111111",
+        color: light ? "var(--white)" : "var(--black)",
         fontSize: "1.55rem",
         letterSpacing: "-0.055em",
       }}
@@ -40,8 +40,8 @@ export function Wordmark({ light = false }: { light?: boolean }) {
 export function DiodeIcon() {
   return (
     <svg viewBox="0 0 80 80" className="h-16 w-16" fill="none" aria-hidden>
-      <path d="M18 40h16M46 22l22 18-22 18V22Z" stroke="#ffec88" strokeWidth="2" />
-      <path d="M46 22v36" stroke="#ffec88" strokeWidth="2" />
+      <path d="M18 40h16M46 22l22 18-22 18V22Z" stroke="var(--yellow)" strokeWidth="2" />
+      <path d="M46 22v36" stroke="var(--yellow)" strokeWidth="2" />
     </svg>
   );
 }
@@ -51,7 +51,7 @@ export function ResistorIcon() {
     <svg viewBox="0 0 80 80" className="h-16 w-16" fill="none" aria-hidden>
       <path
         d="M8 40h14l6-12 8 24 8-24 8 24 8-24 6 12h14"
-        stroke="#ffec88"
+        stroke="var(--yellow)"
         strokeWidth="2"
       />
     </svg>
@@ -61,7 +61,7 @@ export function ResistorIcon() {
 export function CapacitorIcon() {
   return (
     <svg viewBox="0 0 80 80" className="h-16 w-16" fill="none" aria-hidden>
-      <path d="M10 40h24M46 40h24M34 18v44M46 18v44" stroke="#ffec88" strokeWidth="2" />
+      <path d="M10 40h24M46 40h24M34 18v44M46 18v44" stroke="var(--yellow)" strokeWidth="2" />
     </svg>
   );
 }

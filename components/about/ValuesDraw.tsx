@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { about } from "@/lib/content";
-import { prefersReducedMotion } from "@/lib/motion";
+import { cssToken, prefersReducedMotion } from "@/lib/motion";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -70,13 +70,17 @@ export function ValuesDraw() {
         ease: "none",
       });
 
+      const accent = cssToken("--yellow");
+      const muted = cssToken("--grey-700");
+      const canvas = cssToken("--white");
+
       if (cards) {
         tl.fromTo(
           cards,
-          { borderColor: "rgba(83,83,83,1)", color: "rgba(254,251,246,0.4)" },
+          { borderColor: muted, color: `${canvas}66` },
           {
-            borderColor: "rgba(255,236,136,1)",
-            color: "rgba(254,251,246,1)",
+            borderColor: accent,
+            color: canvas,
             stagger: 0.2,
             ease: "none",
           },
@@ -86,8 +90,8 @@ export function ValuesDraw() {
 
       tl.fromTo(
         numbers,
-        { fill: "#535353" },
-        { fill: "#FFEC88", stagger: 0.2, ease: "none" },
+        { fill: muted },
+        { fill: accent, stagger: 0.2, ease: "none" },
         0.1
       );
     },
@@ -111,28 +115,28 @@ export function ValuesDraw() {
           className="hidden w-full lg:block"
           aria-hidden
         >
-          <rect width="1711" height="1953" fill="#1a1a1a" />
-          <g fill="none" stroke="#535353" strokeWidth="2">
+          <rect width="1711" height="1953" fill="var(--black)" />
+          <g fill="none" stroke="var(--grey-700)" strokeWidth="2">
             <rect x="119.5" y="513.5" width="439" height="479" />
             <rect x="1039.5" y="753.5" width="439" height="479" />
             <rect x="119.5" y="1233.5" width="439" height="479" />
             <rect x="1039.5" y="1473.5" width="439" height="479" />
           </g>
-          <g fill="none" stroke="#FFEC88" strokeWidth="2" strokeLinecap="square">
+          <g fill="none" stroke="var(--yellow)" strokeWidth="2" strokeLinecap="square">
             {traces.map((d) => (
               <path key={d} className="v-trace" d={d} />
             ))}
           </g>
-          <text className="v-num" x="140" y="500" fill="#535353" fontSize="28" fontFamily="Arial, sans-serif">
+          <text className="v-num" x="140" y="500" fill="var(--grey-700)" fontSize="28" fontFamily="Arial, sans-serif">
             01
           </text>
-          <text className="v-num" x="1510" y="740" fill="#535353" fontSize="28" fontFamily="Arial, sans-serif">
+          <text className="v-num" x="1510" y="740" fill="var(--grey-700)" fontSize="28" fontFamily="Arial, sans-serif">
             02
           </text>
-          <text className="v-num" x="140" y="1220" fill="#535353" fontSize="28" fontFamily="Arial, sans-serif">
+          <text className="v-num" x="140" y="1220" fill="var(--grey-700)" fontSize="28" fontFamily="Arial, sans-serif">
             03
           </text>
-          <text className="v-num" x="1510" y="1460" fill="#535353" fontSize="28" fontFamily="Arial, sans-serif">
+          <text className="v-num" x="1510" y="1460" fill="var(--grey-700)" fontSize="28" fontFamily="Arial, sans-serif">
             04
           </text>
         </svg>

@@ -1,12 +1,16 @@
 @import "tailwindcss";
 @import "lenis/dist/lenis.css";
 
+/* Brand tokens. Theme branches: theme/<accent>-<surface>
+ * Swap only these values to try a new palette.
+ */
 :root {
   --white: #fefbf6;
   --paper: #fffce0;
   --yellow: #ffec88;
   --black: #1a1a1a;
   --ink: #252324;
+  --raised: #2b2a2a;
   --grey-750: #413e40;
   --grey-700: #535353;
   --grey-550: #7a7772;
@@ -23,6 +27,7 @@
   --color-yellow: var(--yellow);
   --color-black: var(--black);
   --color-ink: var(--ink);
+  --color-raised: var(--raised);
   --color-grey-550: var(--grey-550);
   --color-grey-150: var(--grey-150);
   --font-sans: var(--font-instrument);
@@ -35,7 +40,7 @@
 html {
   background: var(--black);
   scroll-behavior: auto;
-  scrollbar-color: #ffec88 #1a1a1a;
+  scrollbar-color: var(--yellow) var(--black);
 }
 
 .split-line {
@@ -45,7 +50,7 @@ html {
 body {
   margin: 0;
   background: var(--white);
-  color: #000;
+  color: var(--black);
   font-family: var(--font-instrument), Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -115,8 +120,8 @@ a {
   align-items: center;
   gap: 0.55rem;
   background: var(--yellow);
-  color: #000;
-  border: 1px solid #000;
+  color: var(--black);
+  border: 1px solid var(--black);
   border-radius: 0.2rem;
   padding: 0.72rem 0.95rem 0.72rem 1.05rem;
   font-size: 1.05rem;
@@ -129,7 +134,7 @@ a {
 }
 
 .quote-btn:hover {
-  background: #000;
+  background: var(--black);
   color: var(--white);
 }
 
@@ -157,7 +162,7 @@ a {
 
 .nav-pill {
   align-items: center;
-  background: #000;
+  background: var(--black);
   color: var(--white);
   border-radius: 0.45rem;
   padding: 0.15rem;
@@ -181,15 +186,15 @@ a {
 
 .loader-grid {
   background-image:
-    linear-gradient(to right, color-mix(in srgb, #000 12%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, #000 12%, transparent) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in srgb, var(--black) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--black) 12%, transparent) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
 .tech-grid {
   background-image:
-    linear-gradient(to right, color-mix(in srgb, #fefbf6 10%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, #fefbf6 10%, transparent) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in srgb, var(--white) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--white) 10%, transparent) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 

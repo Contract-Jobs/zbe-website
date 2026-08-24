@@ -59,8 +59,8 @@ export function HeroIllustration() {
       className="h-full w-full"
       aria-hidden
     >
-      <rect width="980" height="520" fill="#1a1a1a" />
-      <g stroke="#fefbf6" strokeOpacity="0.14" strokeWidth="1">
+      <rect width="980" height="520" fill="var(--black)" />
+      <g stroke="var(--white)" strokeOpacity="0.14" strokeWidth="1">
         {Array.from({ length: 18 }).map((_, i) => (
           <line key={`v${i}`} x1={40 + i * 52} y1="0" x2={40 + i * 52} y2="520" />
         ))}
@@ -69,19 +69,19 @@ export function HeroIllustration() {
         ))}
       </g>
 
-      <g fill="none" stroke="#fefbf6" strokeWidth="1.4">
+      <g fill="none" stroke="var(--white)" strokeWidth="1.4">
         <rect className="rail" x="90" y="168" width="800" height="54" rx="2" />
-        <rect x="90" y="168" width="800" height="10" fill="#2b2a2a" stroke="none" />
+        <rect x="90" y="168" width="800" height="10" fill="var(--raised)" stroke="none" />
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
           <g key={i} className="sw" style={{ transformOrigin: `${130 + i * 68}px 210px` }}>
             <rect className="rail" x={112 + i * 68} y="182" width="36" height="86" rx="2" />
-            <rect x={118 + i * 68} y="190" width="24" height="38" fill="#ffec88" stroke="none" />
+            <rect x={118 + i * 68} y="190" width="24" height="38" fill="var(--yellow)" stroke="none" />
             <line x1={130 + i * 68} y1="268" x2={130 + i * 68} y2="318" />
           </g>
         ))}
 
         <rect x="140" y="330" width="220" height="110" />
-        <text x="156" y="358" fill="#fefbf6" stroke="none" fontSize="12" fontFamily="Arial">
+        <text x="156" y="358" fill="var(--white)" stroke="none" fontSize="12" fontFamily="Arial">
           PLC
         </text>
         {Array.from({ length: 8 }).map((_, i) => (
@@ -89,15 +89,15 @@ export function HeroIllustration() {
         ))}
 
         <rect x="400" y="330" width="180" height="110" />
-        <text x="416" y="358" fill="#fefbf6" stroke="none" fontSize="12" fontFamily="Arial">
+        <text x="416" y="358" fill="var(--white)" stroke="none" fontSize="12" fontFamily="Arial">
           I/O
         </text>
         {Array.from({ length: 6 }).map((_, i) => (
-          <circle key={`t${i}`} className="pulse" cx={430 + (i % 3) * 44} cy={392 + Math.floor(i / 3) * 28} r="6" fill="#ffec88" stroke="none" />
+          <circle key={`t${i}`} className="pulse" cx={430 + (i % 3) * 44} cy={392 + Math.floor(i / 3) * 28} r="6" fill="var(--yellow)" stroke="none" />
         ))}
 
         <rect x="620" y="330" width="230" height="110" />
-        <text x="636" y="358" fill="#fefbf6" stroke="none" fontSize="12" fontFamily="Arial">
+        <text x="636" y="358" fill="var(--white)" stroke="none" fontSize="12" fontFamily="Arial">
           DRIVES
         </text>
         <path d="M650 400h170" />

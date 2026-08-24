@@ -70,7 +70,7 @@ export function Difference() {
                 </div>
               </div>
             </div>
-            <div className="border-t border-white/10 bg-[#2b2929]">
+            <div className="border-t border-white/10 bg-raised">
               <div className="site-grid flex flex-col gap-6 py-8 lg:flex-row lg:items-center lg:justify-between">
                 <p className="max-w-2xl text-[1.05rem] leading-relaxed text-white/85">
                   {card.body}

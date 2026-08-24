@@ -174,8 +174,8 @@ export function AboutSchematic() {
       aria-hidden
       preserveAspectRatio="xMidYMid slice"
     >
-      <rect width="1600" height="900" fill="#1a1a1a" />
-      <g stroke="#fefbf6" strokeOpacity="0.08" strokeWidth="1">
+      <rect width="1600" height="900" fill="var(--black)" />
+      <g stroke="var(--white)" strokeOpacity="0.08" strokeWidth="1">
         {Array.from({ length: 21 }).map((_, i) => (
           <line key={`v${i}`} x1={40 + i * 76} y1="20" x2={40 + i * 76} y2="880" />
         ))}
@@ -184,12 +184,12 @@ export function AboutSchematic() {
         ))}
       </g>
 
-      <g className="frame" fill="none" stroke="#ffec88" strokeWidth="1.6">
+      <g className="frame" fill="none" stroke="var(--yellow)" strokeWidth="1.6">
         <rect x="90" y="110" width="620" height="310" rx="6" />
         <rect x="890" y="150" width="560" height="290" rx="6" />
       </g>
 
-      <g fill="none" stroke="#ffec88" strokeWidth="1.35" strokeLinecap="square">
+      <g fill="none" stroke="var(--yellow)" strokeWidth="1.35" strokeLinecap="square">
         {traces.map((d) => (
           <path key={d} className="trace" d={d} />
         ))}
@@ -197,11 +197,11 @@ export function AboutSchematic() {
 
       {boxes.map(([x, y, w, h, label]) => (
         <g key={label} className="cad-label" opacity={0}>
-          <rect x={x} y={y} width={w} height={h} fill="none" stroke="#ffec88" strokeWidth="1.2" />
+          <rect x={x} y={y} width={w} height={h} fill="none" stroke="var(--yellow)" strokeWidth="1.2" />
           <text
             x={x + 14}
             y={y + 28}
-            fill="#ffec88"
+            fill="var(--yellow)"
             fontSize="13"
             fontFamily="Arial, sans-serif"
           >
@@ -215,7 +215,7 @@ export function AboutSchematic() {
               width="28"
               height="12"
               fill="none"
-              stroke="#ffec88"
+              stroke="var(--yellow)"
               strokeOpacity="0.7"
             />
           ))}
@@ -229,25 +229,25 @@ export function AboutSchematic() {
           cx={cx}
           cy={cy}
           r="4"
-          fill="#ffec88"
+          fill="var(--yellow)"
           opacity={0}
         />
       ))}
 
-      <text x="108" y="138" fill="#ffec88" fontSize="14" fontFamily="Arial, sans-serif" className="cad-label" opacity={0}>
+      <text x="108" y="138" fill="var(--yellow)" fontSize="14" fontFamily="Arial, sans-serif" className="cad-label" opacity={0}>
         01
       </text>
-      <text x="1420" y="178" fill="#ffec88" fontSize="14" fontFamily="Arial, sans-serif" className="cad-label" opacity={0}>
+      <text x="1420" y="178" fill="var(--yellow)" fontSize="14" fontFamily="Arial, sans-serif" className="cad-label" opacity={0}>
         02
       </text>
-      <text x="108" y="780" fill="#ffec88" fontSize="14" fontFamily="Arial, sans-serif" className="cad-label" opacity={0}>
+      <text x="108" y="780" fill="var(--yellow)" fontSize="14" fontFamily="Arial, sans-serif" className="cad-label" opacity={0}>
         03
       </text>
-      <text x="1420" y="780" fill="#ffec88" fontSize="14" fontFamily="Arial, sans-serif" className="cad-label" opacity={0}>
+      <text x="1420" y="780" fill="var(--yellow)" fontSize="14" fontFamily="Arial, sans-serif" className="cad-label" opacity={0}>
         04
       </text>
 
-      <rect className="scan" x="60" y="70" width="2" height="760" fill="#ffec88" opacity="0.35" />
+      <rect className="scan" x="60" y="70" width="2" height="760" fill="var(--yellow)" opacity="0.35" />
     </svg>
   );
 }
