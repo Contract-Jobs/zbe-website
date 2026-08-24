@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "packageManager": "pnpm@10.18.2",
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "gsap": "^3.15.0",
