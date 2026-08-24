@@ -1,0 +1,226 @@
+@import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+:root {
+  --white: #fefbf6;
+  --paper: #fffce0;
+  --yellow: #ffec88;
+  --black: #1a1a1a;
+  --ink: #252324;
+  --grey-750: #413e40;
+  --grey-700: #535353;
+  --grey-550: #7a7772;
+  --grey-350: #cecbbf;
+  --grey-150: #ede8e4;
+  --line: color-mix(in hsl, var(--ink) 18%, transparent);
+  --line-strong: color-mix(in hsl, var(--ink) 55%, transparent);
+  --line-light: color-mix(in hsl, var(--white) 18%, transparent);
+}
+
+@theme inline {
+  --color-white: var(--white);
+  --color-paper: var(--paper);
+  --color-yellow: var(--yellow);
+  --color-black: var(--black);
+  --color-ink: var(--ink);
+  --color-grey-550: var(--grey-550);
+  --color-grey-150: var(--grey-150);
+  --font-sans: var(--font-instrument);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--black);
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: #000;
+  font-family: var(--font-instrument), Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.display {
+  font-size: clamp(2.75rem, 6.4vw, 4.25rem);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.display-md {
+  font-size: clamp(2.4rem, 5.4vw, 4rem);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.kicker {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.hairline {
+  height: 1px;
+  background: var(--line);
+}
+
+.hairline-light {
+  height: 1px;
+  background: var(--line-light);
+}
+
+.site-grid {
+  width: min(85rem, calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+@media (max-width: 720px) {
+  .site-grid {
+    width: calc(100% - 1.5rem);
+  }
+}
+
+.arrow {
+  display: inline-block;
+  transform: translateY(-0.05em);
+}
+
+.quote-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--yellow);
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 0.2rem;
+  padding: 0.72rem 0.95rem 0.72rem 1.05rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.quote-btn:hover {
+  background: #000;
+  color: var(--white);
+}
+
+.quote-btn-dark {
+  background: var(--ink);
+  color: var(--white);
+  border-color: transparent;
+}
+
+.quote-btn-dark:hover {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.quote-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.15rem;
+}
+
+.nav-pill {
+  display: flex;
+  align-items: center;
+  background: #000;
+  color: var(--white);
+  border-radius: 0.45rem;
+  padding: 0.15rem;
+  height: 3.15rem;
+}
+
+.nav-pill a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 0 0.95rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  opacity: 0.92;
+}
+
+.nav-pill a:hover,
+.nav-pill a[data-active="true"] {
+  opacity: 1;
+}
+
+.loader-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, #000 12%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, #000 12%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.tech-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, #fefbf6 10%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, #fefbf6 10%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    animation: none;
+  }
+}
+
+.field {
+  width: 100%;
+  border: 1px solid color-mix(in hsl, var(--ink) 20%, transparent);
+  background: var(--white);
+  padding: 0.85rem 0.9rem;
+  font: inherit;
+  color: inherit;
+  border-radius: 0.2rem;
+}
+
+.field:focus {
+  outline: 2px solid var(--yellow);
+  outline-offset: 1px;
+}
