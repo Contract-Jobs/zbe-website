@@ -29,10 +29,12 @@ export function Header() {
       <div className="site-grid flex items-center justify-between py-4">
         <Link
           href="/"
-          className="pointer-events-auto relative z-10 flex h-[3.15rem] items-center rounded-[0.45rem] bg-black px-3.5"
+          className="group pointer-events-auto relative z-10 flex h-[3.15rem] items-center rounded-none px-3.5 transition-colors duration-200 hover:bg-black"
           aria-label={`${company.legalName} home`}
         >
-          <Wordmark light />
+          <span className="mix-blend-difference text-white group-hover:mix-blend-normal">
+            <Wordmark light />
+          </span>
         </Link>
 
         <div className="pointer-events-auto flex items-center gap-1.5">
@@ -52,7 +54,7 @@ export function Header() {
 
           <button
             type="button"
-            className={`flex h-[3.15rem] w-[3.15rem] items-center justify-center rounded-[0.35rem] bg-black text-white ${
+            className={`flex h-[3.15rem] w-[3.15rem] items-center justify-center rounded-none bg-black text-white ${
               showLinks ? "lg:hidden" : ""
             }`}
             aria-expanded={open}
