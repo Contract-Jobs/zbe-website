@@ -2,6 +2,8 @@
 
 Marketing site for [ZBE Power Engineering](https://zbepowereng.com) in Addis Ababa. Next.js + Tailwind + a bit of GSAP.
 
+Agent next: [`docs/handoff.md`](docs/handoff.md) · visual language: [`docs/design-guide.md`](docs/design-guide.md).
+
 ## Run it
 
 ```bash
