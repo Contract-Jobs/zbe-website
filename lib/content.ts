@@ -253,7 +253,7 @@ export const projects: {
     {
       slug: "westin-addis",
       title: "Westin Addis Marriott Hotel",
-      client: "Westin Addis Ababa",
+      client: "SHAFA/DIZACON",
       industry: "Hospitality",
       status: "Ongoing",
       scopes: ["Electrical installation", "Fire alarm", "Data system"],

@@ -47,7 +47,7 @@ Tone: confident, technical, short. Brand-blue on cool mist is **shipped on `main
 
 Pages: `/` `/services` `/projects` `/about` `/contact` `/quote` `/privacy` `/legal`.
 
-**Home, in order:** Loader → Hero (DIN-rail) → Trust marquee → Difference (sticky Speed / Quality / Transparency — schematics stay visible on mobile) → How we work → Testimonial → Case studies → FAQ.
+**Home, in order:** Loader → Hero (Dashen Smart Banking sample) → Trust marquee → Difference (sticky Speed / Quality / Transparency — schematics stay visible on mobile) → How we work → Testimonial → Case studies → FAQ.
 
 Quote / contact submit is `mailto:` to sales. Fine for now.
 

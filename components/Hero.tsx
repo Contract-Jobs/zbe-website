@@ -4,8 +4,14 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
-import { hero } from "@/lib/content";
-import { HeroIllustration } from "./HeroIllustration";
+import Image from "next/image";
+import Link from "next/link";
+import { featuredProjects, hero } from "@/lib/content";
+import { ArrowIcon } from "./Icons";
+
+const sample =
+  featuredProjects.find((item) => item.slug === "dashen-smart-banking") ??
+  featuredProjects[0];
 
 gsap.registerPlugin(useGSAP, SplitText);
 
@@ -65,7 +71,29 @@ export function Hero() {
             </ul>
           </div>
           <div className="relative min-h-[320px] lg:min-h-[520px]">
-            <HeroIllustration />
+            {sample?.image ? (
+              <Image
+                src={sample.image}
+                alt={sample.title}
+                fill
+                priority
+                sizes="(min-width: 1024px) 55vw, 100vw"
+                className="object-cover"
+              />
+            ) : (
+              <div className="absolute inset-0 bg-ink" />
+            )}
+            <div className="absolute inset-8 border border-yellow/80" />
+            <p className="absolute left-8 top-8 max-w-[16rem] bg-black px-2.5 py-1.5 text-2xl font-medium tracking-tight text-white">
+              {sample?.title}
+            </p>
+            <Link
+              href={`/projects#${sample?.slug ?? "dashen-smart-banking"}`}
+              className="quote-link absolute bottom-8 left-8 text-white"
+            >
+              See the project
+              <ArrowIcon />
+            </Link>
           </div>
         </div>
       </div>
