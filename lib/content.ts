@@ -1,6 +1,6 @@
 export const company = {
   name: "ZBE",
-  legalName: "ZBE Power Engineering",
+  legalName: "ZBE Power Engineering and Trading",
   tagline: "Power done right.",
   email: "sales@zbepowereng.com",
   phone: "+251 911 488 066",

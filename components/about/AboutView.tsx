@@ -12,7 +12,7 @@ export function AboutView() {
 
       <section
         data-overlap="reveal"
-        className="relative z-10 bg-yellow text-black"
+        className="relative z-10 bg-yellow text-white"
       >
         <div className="site-grid grid gap-10 py-24 lg:grid-cols-2">
           <div>
@@ -23,7 +23,7 @@ export function AboutView() {
               {about.storyHeadline}
             </h2>
           </div>
-          <p className="max-w-lg self-end text-lg leading-relaxed text-black/75" data-sa="lines">
+          <p className="max-w-lg self-end text-lg leading-relaxed text-white/80" data-sa="lines">
             {about.storyBody}
           </p>
         </div>

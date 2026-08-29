@@ -2,20 +2,21 @@
 @import "lenis/dist/lenis.css";
 
 /* Brand tokens. Theme branches: theme/<accent>-<surface>
- * This branch: copper-stone — warm stone surfaces, copper accent (not Podium yellow).
+ * This branch: brand-blue — cool mist surfaces, official ZBE blue accent.
  */
 :root {
-  --white: #f4efe8;
-  --paper: #eadcc8;
-  --yellow: #e08a3c;
-  --black: #1c1410;
-  --ink: #2c221c;
-  --raised: #322820;
-  --grey-750: #4d4038;
-  --grey-700: #6a5a50;
-  --grey-550: #8c7b6e;
-  --grey-350: #d2c4b6;
-  --grey-150: #ebe3d9;
+  --white: #f4f7fa;
+  --paper: #e4ebf2;
+  --yellow: #0072c3;
+  --mark: #ffffff;
+  --black: #0c1824;
+  --ink: #122436;
+  --raised: #1a3044;
+  --grey-750: #3d5166;
+  --grey-700: #5a7084;
+  --grey-550: #7d92a3;
+  --grey-350: #c5d0db;
+  --grey-150: #e8eef3;
   --line: color-mix(in hsl, var(--ink) 18%, transparent);
   --line-strong: color-mix(in hsl, var(--ink) 55%, transparent);
   --line-light: color-mix(in hsl, var(--white) 18%, transparent);
@@ -60,7 +61,7 @@ body {
 
 ::selection {
   background: var(--yellow);
-  color: var(--ink);
+  color: var(--mark);
 }
 
 button,
@@ -120,8 +121,8 @@ a {
   align-items: center;
   gap: 0.55rem;
   background: var(--yellow);
-  color: var(--black);
-  border: 1px solid var(--black);
+  color: var(--mark);
+  border: 1px solid var(--yellow);
   border-radius: 0.2rem;
   padding: 0.72rem 0.95rem 0.72rem 1.05rem;
   font-size: 1.05rem;
@@ -130,12 +131,13 @@ a {
   line-height: 1;
   text-decoration: none;
   white-space: nowrap;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .quote-btn:hover {
   background: var(--black);
-  color: var(--white);
+  color: var(--mark);
+  border-color: var(--black);
 }
 
 .quote-btn-dark {
@@ -146,7 +148,7 @@ a {
 
 .quote-btn-dark:hover {
   background: var(--yellow);
-  color: var(--ink);
+  color: var(--mark);
 }
 
 .quote-link {

@@ -4,7 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { company, nav } from "@/lib/content";
-import { ArrowIcon, CloseIcon, MenuIcon, Wordmark } from "./Icons";
+import { ArrowIcon, CloseIcon, MenuIcon } from "./Icons";
+import { LogoBadge } from "./Logo";
 
 export function Header() {
   const pathname = usePathname();
@@ -29,10 +30,10 @@ export function Header() {
       <div className="site-grid flex items-center justify-between py-4">
         <Link
           href="/"
-          className="pointer-events-auto relative z-10 flex h-[3.15rem] items-center rounded-none bg-black px-3.5"
+          className="pointer-events-auto relative z-10"
           aria-label={`${company.legalName} home`}
         >
-          <Wordmark light />
+          <LogoBadge className="h-[3.15rem] w-auto" />
         </Link>
 
         <div className="pointer-events-auto flex items-center gap-1.5">

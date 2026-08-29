@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { company, footer, nav } from "@/lib/content";
-import { Wordmark } from "./Icons";
+import { LogoBadge, LogoLockup } from "./Logo";
 
 export function Footer() {
   return (
@@ -65,9 +65,7 @@ export function Footer() {
                 Proudly designed and built in {footer.credit}
               </p>
               <Link href="/" aria-label="ZBE home">
-                <span className="text-6xl font-medium tracking-[-0.07em] text-white">
-                  ZBE
-                </span>
+                <LogoLockup className="h-16 w-auto sm:h-20" tone="onDark" />
               </Link>
             </div>
           </div>
@@ -76,7 +74,7 @@ export function Footer() {
             <p>
               © {new Date().getFullYear()} {company.legalName}. {footer.copyright}
             </p>
-            <Wordmark light />
+            <LogoBadge className="h-12 w-auto" />
           </div>
         </div>
       </div>

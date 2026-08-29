@@ -10,21 +10,22 @@ If you are building a different company’s site in this language, use the appen
 
 ## Tokens
 
-`--yellow` is the **accent token** (copper on `main`). Illustrations read `var(--yellow)`, `var(--black)`, `var(--ink)`, `var(--paper)`, `var(--white)`.
+`--yellow` is the **accent token** (official brand blue on `main`). Illustrations read `var(--yellow)`, `var(--black)`, `var(--ink)`, `var(--paper)`, `var(--white)`. `--mark` is pure white for the official logo plates.
 
 ```css
 :root {
-  --white: #f4efe8;   /* page ground — warm stone, not pure white */
-  --paper: #eadcc8;   /* sand / drawing paper */
-  --yellow: #e08a3c;  /* accent: CTAs, traces, selection */
-  --black: #1c1410;   /* espresso — html bg, dark sections, logo plate */
-  --ink: #2c221c;     /* sticky cards, quote boxes */
-  --raised: #322820;
-  --grey-750: #4d4038;
-  --grey-700: #6a5a50;
-  --grey-550: #8c7b6e;
-  --grey-350: #d2c4b6;
-  --grey-150: #ebe3d9;
+  --white: #f4f7fa;   /* page ground — cool mist, not pure white */
+  --paper: #e4ebf2;   /* cool drawing paper */
+  --yellow: #0072c3;  /* accent: CTAs, traces, selection — brand blue */
+  --mark: #ffffff;    /* official logo white */
+  --black: #0c1824;   /* deep navy — html bg, dark sections */
+  --ink: #122436;     /* sticky cards, quote boxes */
+  --raised: #1a3044;
+  --grey-750: #3d5166;
+  --grey-700: #5a7084;
+  --grey-550: #7d92a3;
+  --grey-350: #c5d0db;
+  --grey-150: #e8eef3;
   --line: color-mix(in hsl, var(--ink) 18%, transparent);
   --line-strong: color-mix(in hsl, var(--ink) 55%, transparent);
   --line-light: color-mix(in hsl, var(--white) 18%, transparent);
@@ -36,10 +37,10 @@ If you are building a different company’s site in this language, use the appen
 **Rules**
 
 - Body: `--white`. Dark chapters: `--ink` / `--black`.
-- Selection: accent fill, `--ink` text.
+- Selection: accent fill, `--mark` text.
 - Scrollbar: accent on `--black`.
 - Hairlines: 1px `--line` (or white/18% on dark).
-- Alternate palettes: swap **only** `:root`. Branch as `theme/<accent>-<surface>`. `theme/navy-teal` is `--yellow: #2bbbad`, `--black: #0c1824`, cool mist surfaces.
+- Alternate palettes: swap **only** `:root`. Branch as `theme/<accent>-<surface>`.
 
 **Hard no:** drop shadows, gradients, glass, rounded-xl cards, Inter, purple SaaS chrome, stock circuit-board PNGs.
 
@@ -77,9 +78,9 @@ Weight 400 for huge headlines. Medium (500) for kickers, nav, buttons. Headlines
 
 **Loader.** Four full-viewport layers: white → paper → accent → white with a 28px grid and a 12px accent square. Wipe **up** (`yPercent: -101`), `duration: 1.8`, stagger `0.15` from the end, `power4.inOut`, delay `0.5`. Then unmount. z 80, `pointer-events: none`.
 
-**Header.** Fixed. `pointer-events: none` on the bar, `auto` on controls. z-50. Left: wordmark in a **permanent square black plate** (`h-[3.15rem]`, `rounded-none`). Never mix-blend; never hover-only fill. Right: black nav pill + square hamburger + copper **Start your quote**. After ~100px scroll: hide text links, keep logo + hamburger + quote. Quote hover inverts to black fill / white type.
+**Header.** Fixed. `pointer-events: none` on the bar, `auto` on controls. z-50. Left: official **badge mark** (`h-[3.15rem]`, blue ZBE over white “power engineering”). Never mix-blend; never hover-only fill. Right: navy nav pill + square hamburger + blue **Start your quote**. After ~100px scroll: hide text links, keep logo + hamburger + quote. Quote hover inverts to navy fill / white type.
 
-**Footer.** Full black. Slash-separated nav + legal, contact (hover to accent), giant wordmark. Rises `y: 40%` → `0` on enter (`power4.out`, 1.8s, once).
+**Footer.** Full navy. Slash-separated nav + legal, contact (hover to accent), pulse lockup. Rises `y: 40%` → `0` on enter (`power4.out`, 1.8s, once).
 
 ---
 
@@ -126,7 +127,7 @@ Short. Specific. Field language over adjectives. Primary CTA: **Start your quote
 
 ## Quality bar
 
-- Dark sections must keep the square black wordmark plate readable.
+- Dark sections must keep the official badge readable (it carries its own blue/white plate).
 - Schematics on all breakpoints for the sticky pillars.
 - Missing photo → `--grey-150` or `--paper`, never a broken-image icon.
 - Verify home + about + sticky-card scroll on desktop and ~390px.

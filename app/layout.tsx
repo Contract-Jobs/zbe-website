@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   },
   description:
     "ZBE Power Engineering designs and installs electrical systems, ICT infrastructure, and custom electronics in Addis Ababa.",
-  icons: { icon: "/images/logo.jpg" },
 };
 
 export default function RootLayout({

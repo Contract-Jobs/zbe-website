@@ -22,21 +22,6 @@ export function CloseIcon() {
   );
 }
 
-export function Wordmark({ light = false }: { light?: boolean }) {
-  return (
-    <span
-      className="block font-medium leading-none"
-      style={{
-        color: light ? "var(--white)" : "var(--black)",
-        fontSize: "1.55rem",
-        letterSpacing: "-0.055em",
-      }}
-    >
-      ZBE
-    </span>
-  );
-}
-
 export function DiodeIcon() {
   return (
     <svg viewBox="0 0 80 80" className="h-16 w-16" fill="none" aria-hidden>
