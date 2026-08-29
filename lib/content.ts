@@ -33,7 +33,14 @@ export const hero = {
 
 export const trust = {
   label: "Trusted by hospitals, hotels, banks, and high-rise offices",
-  marks: ["Westin Addis", "Minaye", "Dashen Bank", "MultiChoice", "Sheraton Addis", "Midroc"],
+  marks: [
+    { name: "Westin Addis", initials: "W", word: "WESTIN", line: "ADDIS" },
+    { name: "Minaye", initials: "M", word: "MINAYE" },
+    { name: "Dashen Bank", initials: "D", word: "DASHEN", line: "BANK" },
+    { name: "MultiChoice", initials: "MC", word: "MULTICHOICE" },
+    { name: "Sheraton Addis", initials: "S", word: "SHERATON", line: "ADDIS" },
+    { name: "Midroc", initials: "MD", word: "MIDROC" },
+  ],
 };
 
 export const difference = {

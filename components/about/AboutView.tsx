@@ -3,6 +3,7 @@
 import { about, trust } from "@/lib/content";
 import { AboutHero } from "./AboutHero";
 import { ValuesDraw } from "./ValuesDraw";
+import { ClientMark } from "../ClientMark";
 import { DrawLine } from "../DrawLine";
 
 export function AboutView() {
@@ -42,12 +43,12 @@ export function AboutView() {
           <div className="mt-8 overflow-hidden" data-sa="children">
             <div className="marquee">
               {[0, 1, 2].map((copy) =>
-                trust.marks.map((name) => (
+                trust.marks.map((mark) => (
                   <span
-                    key={`${copy}-${name}`}
-                    className="flex h-14 min-w-[10rem] items-center px-8 text-lg text-white/80"
+                    key={`${copy}-${mark.name}`}
+                    className="flex h-20 min-w-[13.5rem] items-center px-8"
                   >
-                    {name}
+                    <ClientMark mark={mark} tone="paper" />
                   </span>
                 ))
               )}

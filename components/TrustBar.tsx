@@ -1,14 +1,15 @@
 import { trust } from "@/lib/content";
+import { ClientMark } from "./ClientMark";
 
 function Marks({ copy }: { copy: number }) {
   return (
     <>
-      {trust.marks.map((name) => (
+      {trust.marks.map((mark) => (
         <span
-          key={`${copy}-${name}`}
-          className="flex h-16 min-w-[11rem] items-center px-8 text-[1.05rem] font-medium tracking-[-0.03em] text-black/80"
+          key={`${copy}-${mark.name}`}
+          className="flex h-20 min-w-[13.5rem] items-center px-8"
         >
-          {name}
+          <ClientMark mark={mark} />
         </span>
       ))}
     </>
