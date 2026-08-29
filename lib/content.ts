@@ -14,6 +14,7 @@ export const company = {
 
 export const nav = [
   { href: "/services", label: "Services" },
+  { href: "/projects", label: "Projects" },
   { href: "/about", label: "About us" },
   { href: "/contact", label: "Contact us" },
 ];
@@ -31,8 +32,8 @@ export const hero = {
 };
 
 export const trust = {
-  label: "Trusted by hotels, broadcasters, and growing industry",
-  marks: ["Westin Addis", "MultiChoice", "Hospitality", "Broadcast", "Industry"],
+  label: "Trusted by hospitals, hotels, banks, and high-rise offices",
+  marks: ["Westin Addis", "Minaye", "Dashen Bank", "MultiChoice", "Sheraton Addis", "Midroc"],
 };
 
 export const difference = {
@@ -98,59 +99,191 @@ export const testimonial = {
     "ZBE technicians working on an open electrical panel with labelled wiring and DIN-rail components.",
 };
 
-export const caseStudies = {
-  label: "Case studies",
-  headline: "Our most important system is yours",
+export type Project = {
+  slug: string;
+  title: string;
+  client: string;
+  industry: string;
+  status: "Complete" | "Ongoing";
+  scopes: string[];
+  body: string;
+  image?: string;
+  featured?: boolean;
+};
+
+export const projects: {
+  hero: { title: string; body: string };
+  items: Project[];
+} = {
+  hero: {
+    title: "Work we can put a name to.",
+    body: "Hospitals, hotels, banks, and high-rise offices — electrical, fire, and data systems installed and commissioned.",
+  },
   items: [
     {
+      slug: "adama-referral-hospital",
+      title: "Adama Referral Hospital",
+      client: "CDC",
+      industry: "Healthcare",
+      status: "Complete",
+      scopes: ["Electrical installation", "450 kVA generator", "Mechanical control board"],
+      body: "Electrical installation, a 450 kVA generator, and a control board for the mechanical system on a CDC hospital programme.",
+      image: "/images/projects/adama-hospital.jpg",
+      featured: true,
+    },
+    {
+      slug: "nekemte-regional-laboratory",
+      title: "Nekemte Regional Laboratory",
+      client: "CDC",
+      industry: "Healthcare",
+      status: "Complete",
+      scopes: ["Electrical installation", "Electrical board assembly", "350 kVA generator"],
+      body: "Electrical installation, board assembly, and a 350 kVA generator installed and commissioned for a CDC laboratory.",
+    },
+    {
+      slug: "minaye-corporate",
+      title: "Minaye Corporate Office",
+      client: "Minaye",
+      industry: "High-rise",
+      status: "Complete",
+      scopes: ["Electrical installation", "Data system", "Two 550 kVA generators with synchronisation"],
+      body: "Full electrical and data installation for a 2B+G+19 office, including two 550 kVA generators installed and synchronised.",
+      image: "/images/projects/minaye-corporate.jpg",
+      featured: true,
+    },
+    {
+      slug: "minaye-parking",
+      title: "Minaye Corporate Parking",
+      client: "Minaye",
+      industry: "High-rise",
+      status: "Complete",
+      scopes: ["Electrical installation", "Fire alarm", "2,000 kVA transformer", "CCTV"],
+      body: "Electrical, fire alarm, and CCTV for a B+G+20 parking structure, plus a 2,000 kVA transformer installation.",
+    },
+    {
+      slug: "ethiopian-blood-bank",
+      title: "Ethiopian Blood Bank",
+      client: "Ethiopian Blood Bank",
+      industry: "Healthcare",
+      status: "Complete",
+      scopes: ["Partial electrical installation", "Fire alarm interfaced with fire pump"],
+      body: "Partial electrical installation and fire-alarm interfacing with the fire pump.",
+    },
+    {
+      slug: "multichoice-apartments",
+      title: "MultiChoice Ethiopia Apartments",
+      client: "MultiChoice Ethiopia",
+      industry: "Residential",
+      status: "Complete",
+      scopes: ["Electrical installation", "450 kVA generator"],
+      body: "Electrical installation and a 450 kVA generator for the MultiChoice Ethiopia apartments.",
+    },
+    {
+      slug: "mohammedian-village",
+      title: "Mohammedian Village Sales Office",
+      client: "Midroc Mechare",
+      industry: "Real estate",
+      status: "Complete",
+      scopes: ["Electrical installation", "Fire alarm", "Data system"],
+      body: "Electrical, fire alarm, and data installation for the Midroc Mechare sales office.",
+    },
+    {
+      slug: "loli-luxury-penthouses",
+      title: "Loli Luxury Penthouses",
+      client: "Midroc",
+      industry: "Residential",
+      status: "Complete",
+      scopes: ["Electrical installation", "Fire alarm", "Data system"],
+      body: "Electrical, fire alarm, and data installation for the Midroc penthouse programme.",
+    },
+    {
+      slug: "sheraton-steak-house",
+      title: "Sheraton Addis Steak House",
+      client: "Sheraton Addis",
+      industry: "Hospitality",
+      status: "Complete",
+      scopes: ["Electrical installation"],
+      body: "Electrical installation for the Sheraton Addis steak house.",
+    },
+    {
+      slug: "minaye-luxury-apartment",
+      title: "Minaye Luxury Apartment",
+      client: "Minaye",
+      industry: "Residential",
+      status: "Complete",
+      scopes: ["Electrical maintenance & inspection", "Generator maintenance & inspection"],
+      body: "Electrical and generator maintenance and inspection for the luxury apartment.",
+    },
+    {
+      slug: "minaye-furnished-apartment",
+      title: "Minaye Furnished Apartment",
+      client: "Minaye",
+      industry: "Residential",
+      status: "Complete",
+      scopes: ["Electrical maintenance & inspection", "Generator maintenance & inspection"],
+      body: "Electrical and generator maintenance and inspection for the furnished apartment.",
+    },
+    {
+      slug: "century-real-estate",
+      title: "Century Real Estate",
+      client: "Century Real Estate",
+      industry: "Real estate",
+      status: "Complete",
+      scopes: ["450 kVA and 700 kVA generators", "Active maintenance for six generators across four sites"],
+      body: "Generator installation and commissioning, plus ongoing maintenance for six generators on four sites.",
+    },
+    {
+      slug: "dashen-smart-banking",
+      title: "Dashen Smart Banking",
+      client: "Dashen Bank",
+      industry: "Banking",
+      status: "Complete",
+      scopes: ["Electrical installation", "Fire alarm", "Data system"],
+      body: "Electrical, fire alarm, and data installation for a Dashen smart-banking branch.",
+      image: "/images/projects/dashen-smart-banking.jpg",
+      featured: true,
+    },
+    {
       slug: "westin-addis",
-      title: "Electrical and ICT buildout for a landmark Addis Ababa hotel",
+      title: "Westin Addis Marriott Hotel",
       client: "Westin Addis Ababa",
       industry: "Hospitality",
-      body: "A large hospitality programme needs power, lighting, and low-current systems that disappear into the guest experience. ZBE supported electrical installation and ICT infrastructure so the building could open on a hotel-grade standard.",
-      image: "/images/work/westin.jpg",
+      status: "Ongoing",
+      scopes: ["Electrical installation", "Fire alarm", "Data system"],
+      body: "Ongoing electrical, fire alarm, and data installation for the Westin Addis Marriott Hotel.",
+      image: "/images/projects/westin-addis.jpg",
+      featured: true,
     },
     {
-      slug: "multichoice",
-      title: "Broadcast-grade ICT infrastructure for a regional media operator",
-      client: "MultiChoice",
-      industry: "Broadcast",
-      body: "Media operations cannot tolerate noisy power or fragile cabling. ZBE delivered structured ICT infrastructure built for uptime, service access, and clean signal paths.",
-      image: "/images/work/panel-2.jpg",
+      slug: "sheraton-office-bar",
+      title: "Sheraton Office Bar",
+      client: "Sheraton Addis",
+      industry: "Hospitality",
+      status: "Ongoing",
+      scopes: ["Electrical installation", "Fire alarm", "Data system"],
+      body: "Ongoing electrical, fire alarm, and data installation for the Sheraton office bar.",
     },
     {
-      slug: "industrial-panels",
-      title: "Control panel design, assembly, and commissioning for industrial plant",
-      client: "Confidential",
-      industry: "Industrial",
-      body: "From schematic to live panel: labelled trunks, orderly DIN-rail layouts, and point-to-point checks so operators can maintain the system without guesswork.",
-      image: "/images/work/panel-1.jpg",
-    },
-    {
-      slug: "pcb-lab",
-      title: "Custom PCB design and prototype builds for specialised electronics",
-      client: "Confidential",
-      industry: "Electronics",
-      body: "Concept, layout, fabrication, and lab testing under one roof — so hardware teams are not bouncing between a designer, a board house, and a test bench.",
-      image: "/images/work/panel-3.jpg",
-    },
-    {
-      slug: "commercial-power",
-      title: "Site electrical installation for a multi-building commercial campus",
-      client: "Confidential",
-      industry: "Commercial",
-      body: "Distribution, containment, and termination coordinated with other trades so energisation happens on the construction programme — not after it.",
-      image: "/images/work/site-1.jpg",
-    },
-    {
-      slug: "emergency-response",
-      title: "Standby electrical support for critical facilities",
-      client: "Confidential",
-      industry: "Facilities",
-      body: "When a fault hits after hours, the response has to be technical, not theatrical. ZBE keeps a 24/7 path from call-out to a documented fix.",
-      image: "/images/work/hero.jpg",
+      slug: "finland-embassy-minaye",
+      title: "Finland Embassy — Minaye 13th Floor",
+      client: "Finland Embassy / Minaye",
+      industry: "Diplomatic",
+      status: "Ongoing",
+      scopes: ["Electrical installation", "Fire alarm", "Data system"],
+      body: "Ongoing electrical, fire alarm, and data installation for the Finland Embassy fit-out on the 13th floor of the Minaye building.",
     },
   ],
+};
+
+export const featuredProjects = [
+  ...projects.items.filter((item) => item.featured && item.slug === "dashen-smart-banking"),
+  ...projects.items.filter((item) => item.featured && item.slug !== "dashen-smart-banking"),
+];
+
+export const caseStudies = {
+  label: "Projects",
+  headline: "Work we can put a name to.",
+  items: featuredProjects,
 };
 
 export const faqs = {
@@ -194,37 +327,98 @@ export const faqs = {
 
 export const services = {
   hero: {
-    title: "Services",
-    body: "Electrical installation, ICT infrastructure, and custom electronics — designed, built, and supported by one team in Addis Ababa.",
+    title: "Electrical and fire protection.",
+    body: "Complete supply and installation — drawings, containment, and commissioning — for power systems and fire fighting.",
   },
-  blocks: [
+  offerings: [
     {
-      title: "Design & engineering",
-      body: "Decades of field sense, applied on paper first. We design to the actual site, the actual load, and the standards that will be inspected — then we install what we drew.",
-    },
-    {
-      title: "Electrical installation",
-      items: [
-        { title: "Power systems", body: "Distribution, containment, termination, and commissioning for commercial and industrial sites." },
-        { title: "Control panels", body: "Schematics, assembly, labelling, and testing so the panel in the field matches the drawing in your folder." },
-        { title: "Maintenance & emergency", body: "Planned service plus 24/7 call-out when a fault cannot wait for Monday." },
+      id: "electrical",
+      title: "Electrical service",
+      intro:
+        "Complete supply and installation of electrical systems, from first drawing through testing and as-builts.",
+      groups: [
+        {
+          title: "Drawings",
+          items: [
+            "Builder-work drawings",
+            "Shop drawings",
+            "Coordination drawings",
+            "Construction drawings",
+          ],
+        },
+        {
+          title: "Installation",
+          items: [
+            "Containments — PVC & GI",
+            "Cable management systems",
+            "Wiring and cabling",
+            "Earthing system",
+            "Busbar trunking",
+            "Switchgear system",
+            "Metering & instrumentation",
+            "Emergency power supply",
+            "Wiring accessories",
+            "Disconnecting switches",
+            "Light fitting installation",
+            "Lightning protection system",
+          ],
+        },
+        {
+          title: "Handover",
+          items: ["Testing and commissioning", "As-built drawings"],
+        },
       ],
     },
     {
-      title: "Electronics & ICT",
-      items: [
-        { title: "Custom PCB design", body: "Layout, fabrication, and prototype testing in our electronics laboratory." },
-        { title: "ICT infrastructure", body: "Structured cabling, racks, and low-current systems for buildings that have to stay online." },
-        { title: "Prototyping", body: "From concept to a working board and a documented test, without a chain of subcontractors." },
+      id: "fire-protection",
+      title: "Fire protection service",
+      intro:
+        "Supply and installation of fire-fighting systems, from drawings through pressure testing and commissioning.",
+      groups: [
+        {
+          title: "Drawings",
+          items: [
+            "Builder-work drawings",
+            "Shop drawings",
+            "Coordination drawings",
+            "Construction drawings",
+          ],
+        },
+        {
+          title: "Installation",
+          items: [
+            "Sprinkler pipes",
+            "Zone control valves",
+            "Wet riser pipes",
+            "Sprinkler heads",
+            "Breeching inlets",
+            "Fire extinguishers",
+            "Fire blankets",
+            "Fire hose-reel cabinets",
+            "PRVs, isolation valves, and related fittings",
+            "Landing valves & fire hose reels",
+            "Suppression systems — clean agent, deluge, pre-action",
+            "Fire pump rooms — networks, valves, accessories, control panel, alarm check valves, NRVs",
+          ],
+        },
+        {
+          title: "Handover",
+          items: [
+            "Pressure testing for fire-fighting pipes",
+            "Labelling and identification",
+            "Testing and commissioning",
+            "As-built drawings",
+          ],
+        },
       ],
     },
   ],
   industries: [
     { title: "Hospitality", body: "Guest-facing buildings that cannot look like a job site after opening night." },
-    { title: "Broadcast & media", body: "Clean power and structured ICT for signal-critical rooms." },
-    { title: "Industrial plant", body: "Panels and installation that maintenance teams can actually work on." },
-    { title: "Commercial campuses", body: "Coordinated electrical packages that keep pace with other trades." },
-    { title: "Electronics OEMs", body: "PCB design and lab support from first layout to a tested prototype." },
+    { title: "Broadcast & media", body: "Clean power and life-safety systems for signal-critical rooms." },
+    { title: "Industrial plant", body: "Electrical and fire packages that maintenance teams can actually work on." },
+    { title: "Commercial campuses", body: "Coordinated electrical and fire packages that keep pace with other trades." },
+    { title: "High-rise & mixed-use", body: "Wet risers, sprinklers, and switchgear sequenced with the construction programme." },
     { title: "Critical facilities", body: "Documented systems and a crew that answers the phone." },
   ],
 };

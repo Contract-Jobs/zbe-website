@@ -25,16 +25,20 @@ export function CaseStudies() {
         <div className="mt-14 grid gap-8 border-t border-black/15 pt-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div data-clippath-cover className="relative aspect-square overflow-hidden bg-ink">
             <div className="tech-grid absolute inset-0 opacity-70" />
-            <Image
-              src={item.image}
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover mix-blend-luminosity opacity-90"
-            />
+            {item.image ? (
+              <Image
+                src={item.image}
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+            ) : (
+              <div className="absolute inset-0 bg-paper" />
+            )}
             <div className="absolute inset-8 border border-yellow/80" />
-            <p className="absolute left-10 top-10 text-2xl font-medium tracking-tight text-white">
-              {item.client}
+            <p className="absolute left-8 top-8 max-w-[14rem] bg-black px-2.5 py-1.5 text-2xl font-medium tracking-tight text-white">
+              {item.title}
             </p>
           </div>
 
@@ -55,10 +59,7 @@ export function CaseStudies() {
             <p className="mt-8 max-w-lg text-[1.02rem] leading-relaxed text-black/75">
               {item.body}
             </p>
-            <Link
-              href={`/services#${item.industry.toLowerCase()}`}
-              className="quote-link mt-8 w-fit"
-            >
+            <Link href={`/projects#${item.slug}`} className="quote-link mt-8 w-fit">
               Read more
               <ArrowIcon />
             </Link>

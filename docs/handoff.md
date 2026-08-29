@@ -33,7 +33,7 @@ Tone: confident, technical, short. Brand-blue on cool mist is **shipped on `main
 
 | Path | Role |
 |---|---|
-| `lib/content.ts` | All copy. Legal name includes “and Trading”. |
+| `lib/content.ts` | All copy. Legal name includes “and Trading”. Projects come from the company profile. |
 | `public/images/` | Photos |
 | `app/globals.css` | Brand tokens |
 | `app/icon.svg` | Favicon — white pulse on brand blue |
@@ -45,7 +45,7 @@ Tone: confident, technical, short. Brand-blue on cool mist is **shipped on `main
 | `components/Footer.tsx` | Pulse lockup + badge |
 | `components/*Illustration*.tsx`, `PanelCutaway`, `about/*` | Original CAD SVGs |
 
-Pages: `/` `/services` `/about` `/contact` `/quote` `/privacy` `/legal`.
+Pages: `/` `/services` `/projects` `/about` `/contact` `/quote` `/privacy` `/legal`.
 
 **Home, in order:** Loader → Hero (DIN-rail) → Trust marquee → Difference (sticky Speed / Quality / Transparency — schematics stay visible on mobile) → How we work → Testimonial → Case studies → FAQ.
 

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/Icons";
-import { DrawLine } from "@/components/DrawLine";
 import { services } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -23,38 +22,51 @@ export default function ServicesPage() {
         </p>
       </section>
 
-      <section className="border-t border-black/10">
-        <div className="site-grid grid gap-10 py-20 lg:grid-cols-[0.9fr_1.1fr]">
-          <h2 className="display-md max-w-md" data-sa="lines">
-            {services.blocks[0]!.title}
-          </h2>
-          <div>
-            <p className="max-w-lg text-lg leading-relaxed" data-sa="lines">
-              {services.blocks[0]!.body}
-            </p>
-            <Link href="/quote" className="quote-btn quote-btn-dark mt-10">
-              Start the quote
-              <ArrowIcon />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {services.blocks.slice(1).map((block) => (
-        <section key={block.title} className="border-t border-black/10">
-          <div className="site-grid py-20">
-            <h2 className="display-md max-w-3xl" data-sa="lines">
-              {block.title}
-            </h2>
-            <div className="mt-8">
-              <DrawLine />
+      {services.offerings.map((offering, index) => (
+        <section
+          key={offering.id}
+          id={offering.id}
+          className="border-t border-black/10"
+        >
+          <div className="site-grid grid gap-12 py-20 lg:grid-cols-[0.82fr_1.18fr]">
+            <div>
+              <p className="kicker" data-sa="block">
+                0{index + 1}
+              </p>
+              <h2 className="display-md mt-4 max-w-md" data-sa="lines">
+                {offering.title}
+              </h2>
+              <p className="mt-6 max-w-md text-lg leading-relaxed text-black/75" data-sa="lines">
+                {offering.intro}
+              </p>
+              {index === 0 ? (
+                <Link href="/quote" className="quote-btn quote-btn-dark mt-10">
+                  Start the quote
+                  <ArrowIcon />
+                </Link>
+              ) : (
+                <Link href="/quote" className="quote-link mt-10">
+                  Start your quote
+                  <ArrowIcon />
+                </Link>
+              )}
             </div>
-            <div className="mt-12 grid gap-px bg-black/10 lg:grid-cols-3" data-sa="children">
-              {block.items?.map((item) => (
-                <article key={item.title} className="bg-white p-8">
-                  <h3 className="text-2xl tracking-tight">{item.title}</h3>
-                  <p className="mt-4 text-black/70">{item.body}</p>
-                </article>
+
+            <div className="space-y-10" data-sa="children">
+              {offering.groups.map((group) => (
+                <div key={group.title}>
+                  <p className="kicker">{group.title}</p>
+                  <ul className="mt-4 grid border-t border-black/10 sm:grid-cols-2">
+                    {group.items.map((item) => (
+                      <li
+                        key={item}
+                        className="border-b border-black/10 py-3 pr-6 text-[1.05rem] leading-snug"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
           </div>

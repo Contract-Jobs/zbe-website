@@ -69,7 +69,7 @@ Weight 400 for huge headlines. Medium (500) for kickers, nav, buttons. Headlines
 - Two-column industrial splits: copy | drawing or photo. Vertical 1px rules. Uneven ratios (`[1.15fr_0.85fr]`, `[0.78fr_1.22fr]`) — never 50/50.
 - **Sharp corners as default.** Radius 0 on logo plate, hamburger, photo frames, sticky cards. Exceptions: quote button `0.2rem`, nav pill `0.45rem`, form fields `0.2rem`.
 - **No drop shadows. No gradients. No glass.** Depth = overlapping panels, sticky stacks, hairlines.
-- Photos: documentary site/panel work, object-cover, no rounded masks. Case studies: `mix-blend-luminosity` over a dark grid, accent inset, name overlaid.
+- Photos: documentary site/panel work, object-cover, full colour, no rounded masks. Case studies / projects: accent inset, name on a square black plate.
 - Tech grids: CSS repeating 28–32px lines at 10–14% opacity.
 
 ---
